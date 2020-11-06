@@ -1,3 +1,5 @@
+#I'm new to Python and programming and I especially struggled with this one... the code is a bit ugly but I think it's working. I'm sure there is a way that I could just use one for loop for each species, but I couldn't get it to work so I split it into different loops for each question.
+
 import os, gzip, itertools
 
 # this is code which will parse FASTA files
@@ -54,7 +56,7 @@ with gzip.open(file2,"rt") as fh:
         add_the_myco_lengths = len(number_of_myco_bases)
         total_length_of_myco_genes += add_the_myco_lengths
          
-        
+#Looking into GC in the genome
 with gzip.open(file1,"rt") as fh:
     seqs = aspairs(fh)
     count_gc = 0
@@ -78,7 +80,7 @@ with gzip.open(file2,"rt") as fh:
             if i == "G" or i == "C":
                 count_myco_gc += 1
 
-                
+#Practice code from workshop looking at first codon only            
 with gzip.open(file1,"rt") as fh:
     seqs = dict(aspairs(fh))
     first_codon = {}
@@ -91,6 +93,7 @@ with gzip.open(file1,"rt") as fh:
             
 #print(first_codon)
 
+#Now try to look at all codons
 with gzip.open(file1,"rt") as fh:
     seqs = dict(aspairs(fh))
     all_the_codons = {}
